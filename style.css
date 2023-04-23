@@ -90,6 +90,7 @@ ul {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.2s forwards;
 }
 
 #switch span {
@@ -104,12 +105,12 @@ ul {
 }
 
 .light #switch button {
-  left: initial;
-  right: 0;
+  animation: slide-in 0.4s forwards;
 }
 
-/* #switch span:hover {
-} */
+#switch button:hover {
+  outline: 0.8rem solid var(--highlight-color);
+}
 
 #links ul {
   display: flex;
@@ -187,5 +188,27 @@ footer {
 
   .light {
     --bg-url: url('./assets/img/bg-lightmode-desktop.png');
+  }
+}
+
+/* Animation */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: 0;
   }
 }
